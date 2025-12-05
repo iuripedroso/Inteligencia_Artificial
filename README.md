@@ -24,18 +24,6 @@ Este repositório contém projetos acadêmicos desenvolvidos em Python durante a
 
 ---
 
-## 🖼️ Imagens do Projeto
-
-<div style="display: flex; gap: 10px;">
-  <img src="URL_DA_IMAGEM_1" width="180">
-  <img src="URL_DA_IMAGEM_2" width="180">
-  <img src="URL_DA_IMAGEM_3" width="180">
-  <img src="URL_DA_IMAGEM_4" width="180">
-</div>
-
-> Substitua as URLs acima pelas imagens relevantes de cada projeto, se desejar.
-
----
 
 ## 💻 Detalhes da Implementação
 
