@@ -1,0 +1,2 @@
+pip install -r requirements.txt
+rode esse comando caso dê problemas de dependências no projeto.

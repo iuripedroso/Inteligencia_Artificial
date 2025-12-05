@@ -1,0 +1,131 @@
+const grafo = {
+  "acesso principal": [{ para: "farmacia escola", custo: 63.98 }],
+
+  "acesso secundario": [
+    { para: "farmacia escola", custo: 50.78 },
+    { para: "biblioteca", custo: 68.24 }
+  ],
+
+  "farmacia escola": [
+    { para: "acesso principal", custo: 63.98 },
+    { para: "acesso secundario", custo: 50.78 }
+  ],
+
+  "biblioteca": [{ para: "auditorio", custo: 35.00 }],
+
+  "auditorio": [
+    { para: "biblioteca", custo: 35.00 },
+    { para: "coorti", custo: 34.40 }
+  ],
+
+  "coorti": [
+    { para: "ru", custo: 10.00 },
+    { para: "auditorio", custo: 34.40 }
+  ],
+
+  "ru": [
+    { para: "coorti", custo: 10.00 },
+    { para: "centrinho", custo: 30.00 }
+  ],
+
+  "centrinho": [
+    { para: "ru", custo: 30.00 },
+    { para: "bloco 2", custo: 40.00 },
+    { para: "degeo", custo: 44.78 }
+  ],
+
+  "bloco 2": [
+    { para: "centrinho", custo: 40.00 },
+    { para: "pde", custo: 70.18 },
+    { para: "bloco 1", custo: 36.45 }
+  ],
+
+  "degeo": [{ para: "centrinho", custo: 44.78 }],
+  
+  "bloco 1": [
+    { para: "bloco 2", custo: 36.45 },
+    { para: "decomp", custo: 74.97 }
+  ],
+
+  "lago decomp": [{ para: "decomp", custo: 52.84 }],
+
+  "decomp": [
+    { para: "pde", custo: 108.66 },
+    { para: "lago decomp", custo: 52.84 },
+    { para: "bloco 1", custo: 33.97 }
+  ],
+
+  "pde": [
+    { para: "decomp", custo: 33.97 },
+    { para: "bloco 2", custo: 70.18 },
+    { para: "ginasio de esportes", custo: 170.01 }
+  ],
+
+  "ginasio de esportes": [
+    { para: "pde", custo: 170.01 },
+    { para: "agro", custo: 190.01 }
+  ],
+  
+  "agro": [{ para: "ginasio de esportes", custo: 190.01 }]
+};
+
+const heuristica = {
+  "acesso principal": 309.71,
+  "acesso secundario": 280.74,
+  "farmacia escola": 285.04,
+  "biblioteca": 250,
+  "auditorio": 220.88,
+  "coorti": 213.02,
+  "ru": 180.46,
+  "centrinho": 150.03,
+  "bloco 2": 110.11,
+  "degeo": 130.16,
+  "bloco 1": 80.69,
+  "lago decomp": 30.77,
+  "decomp": 0.0,
+  "pde": 24.11,
+  "ginasio de esportes": 250.01,
+  "agro": 500.0
+};
+
+function aEstrela(g, ini, obj, h) {
+  const abertos = [ini];
+  const veioDe = { [ini]: null };
+  const gS = { [ini]: 0 };
+  const fS = { [ini]: h[ini] };
+
+  while (abertos.length > 0) {
+    abertos.sort((a, b) => (fS[a] ?? Infinity) - (fS[b] ?? Infinity));
+    const atual = abertos.shift();
+
+    if (atual === obj) {
+      const cam = [];
+      let n = obj;
+      while (n) {
+        cam.unshift(n);
+        n = veioDe[n];
+      }
+      console.log("Caminho encontrado:", cam);
+      return cam;
+    }
+
+    for (const viz of g[atual] || []) {
+      const novoG = (gS[atual] ?? Infinity) + viz.custo;
+
+      if (novoG < (gS[viz.para] ?? Infinity)) {
+        veioDe[viz.para] = atual;
+        gS[viz.para] = novoG;
+        fS[viz.para] = novoG + h[viz.para];
+
+        if (!abertos.includes(viz.para)) {
+          abertos.push(viz.para);
+        }
+      }
+    }
+  }
+
+  console.log("Nenhum caminho encontrado.");
+  return [];
+}
+
+aEstrela(grafo, "acesso principal", "decomp", heuristica);
