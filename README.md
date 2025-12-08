@@ -62,5 +62,3 @@ Este repositório contém projetos acadêmicos desenvolvidos em Python durante a
 - Cada pasta contém **README específico** e arquivos de configuração (`requirements.txt`) para instalação das dependências.
 - Para rodar cada projeto, consulte o README interno da respectiva pasta.
 
----
-
