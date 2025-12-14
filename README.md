@@ -1,10 +1,8 @@
-## 🎓 Projetos de Inteligência Artificial
+## Projetos de Inteligência Artificial
 
 Este repositório contém projetos acadêmicos desenvolvidos em Python durante a graduação, envolvendo **Algoritmos Genéticos**, **Colônia de Formigas**, **Redes Neurais MLP** e **Algoritmos de Rotas**.
 
----
-
-## 📂 Estrutura do Repositório
+## Estrutura do Repositório
 
 - **Algoritmo Genético**  
   Implementações de algoritmos genéticos para diferentes problemas, com análise de resultados e visualização de desempenho.
@@ -21,8 +19,6 @@ Este repositório contém projetos acadêmicos desenvolvidos em Python durante a
 
 - **Algoritmo de Rotas**  
   Projetos relacionados a cálculo de rotas, incluindo documentação e código-fonte.
-
----
 
 
 ## 💻 Detalhes da Implementação
@@ -45,20 +41,9 @@ Este repositório contém projetos acadêmicos desenvolvidos em Python durante a
 - Cálculo e otimização de rotas.
 - Código organizado em pastas específicas para cada implementação.
 
----
-
-## ⚡ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - Python 3.x  
 - Bibliotecas: `numpy`, `pandas`, `matplotlib`  
 - PIL para manipulação de imagens  
 - Estruturas de dados personalizadas para algoritmos
-
----
-
-## 📌 Observações
-
-- Projetos desenvolvidos como parte da graduação em **Ciência da Computação**.  
-- Cada pasta contém **README específico** e arquivos de configuração (`requirements.txt`) para instalação das dependências.
-- Para rodar cada projeto, consulte o README interno da respectiva pasta.
-
