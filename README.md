@@ -21,7 +21,7 @@ Este repositório contém projetos acadêmicos desenvolvidos em Python durante a
   Projetos relacionados a cálculo de rotas, incluindo documentação e código-fonte.
 
 
-## 💻 Detalhes da Implementação
+## Detalhes da Implementação
 
 ### Algoritmo Genético
 - Manipulação de **cromossomos**, operadores genéticos (crossover, mutação), seleção e avaliação de fitness.
